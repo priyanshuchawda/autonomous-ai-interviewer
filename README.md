@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Autonomous AI Technical Interviewer Agent
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-First, run the development server:
+An enterprise-grade, stateful, multi-turn AI Technical Interviewer built with Next.js App Router, TypeScript, and Breeth Graph Memory integration. The agent conducts realistic technical interviews for learners based on their journey through the 31-day AI Cohort curriculum.
+
+---
+
+## 🌟 Key Features
+
+- **Multi-turn Technical Evaluation**: Conducts adaptive multi-turn conversations evaluating candidate understanding across curriculum topics.
+- **Dynamic Questioning & Memory**: Dynamically selects questions based on completed, skipped, or multi-attempt missions, syncing conversation turns into **Breeth Graph Memory** (`https://api.thebreeth.com/v1`).
+- **Strict Compliance with API Contract**: Exposes standard `POST /api/interview` matching the technical specification (`sessionId`, `candidate`, `message`, `done`, `feedback`).
+- **Structured Feedback Synthesis**: Generates actionable, structured post-interview reports detailing `summary`, `strengths`, `gaps`, and `next` steps.
+- **Modern Glassmorphism UI**: High-fidelity dark mode dashboard with live status indicators and real-time candidate assessment tools.
+
+---
+
+## 🛠️ Architecture & Tech Stack
+
+- **Framework**: Next.js App Router (React 19)
+- **Language**: TypeScript (Strict Mode)
+- **Styling**: Vanilla CSS Design Tokens (Glassmorphic dark aesthetic)
+- **Memory Engine**: Breeth Graph SDK Integration (`breth_sdk.md`)
+- **Testing**: Automated end-to-end integration tests using `tsx`
+
+---
+
+## 🚀 Getting Started
+
+### 1. Installation
+
+```bash
+npm install
+```
+
+### 2. Configure Environment Variables
+
+Create `.env.local`:
+
+```env
+BREETH_API_KEY="ck_live_xjblAocdzLkvepc4_L5GFxycT811HFesVLq63u8Zymc"
+BREETH_API_URL="https://api.thebreeth.com"
+```
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 Live Verification & Testing
 
-## Learn More
+Run the automated API integration test script:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx tsx src/scripts/test-api.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Build and lint verification:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License.
