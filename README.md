@@ -41,7 +41,7 @@ npm install
 Create `.env.local`:
 
 ```env
-BREETH_API_KEY="ck_live_xjblAocdzLkvepc4_L5GFxycT811HFesVLq63u8Zymc"
+BREETH_API_KEY=""
 BREETH_API_URL="https://api.thebreeth.com"
 ```
 
